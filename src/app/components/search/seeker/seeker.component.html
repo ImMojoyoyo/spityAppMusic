@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col">
+        <form action="">
+            <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Looking for a song..."
+                #formSong 
+                (keyup)="searchSong(formSong.value)"
+            >
+            <button
+                class="btn btn-success"
+                (click)="searchSong(formSong.value)"
+                type="button"
+            >
+            Search
+            </button>
+        </form>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let art of artistas">
+          <div class="card">
+            <img src="{{!art.images[0].url}}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title">{{ art.name }}</h5>
+              <p class="card-text">
+                <span class="badge bg-dark"></span>
+              </p>
+            </div>
+          </div>
+    </div>
+
+
+
+</div>
